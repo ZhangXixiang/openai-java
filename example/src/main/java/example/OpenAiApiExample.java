@@ -15,6 +15,7 @@ import java.util.List;
 class OpenAiApiExample {
     public static void main(String... args) {
         String token = System.getenv("OPENAI_TOKEN");
+        System.out.println("token="+ token);
         OpenAiService service = new OpenAiService(token, Duration.ofSeconds(30));
 
         System.out.println("\nCreating completion...");
@@ -29,7 +30,8 @@ class OpenAiApiExample {
 
         System.out.println("\nCreating Image...");
         CreateImageRequest request = CreateImageRequest.builder()
-                .prompt("A cow breakdancing with a turtle")
+                // .prompt("A cow breakdancing with a turtle")
+                .prompt("A girl play with the fish")
                 .build();
 
         System.out.println("\nImage is located at:");
